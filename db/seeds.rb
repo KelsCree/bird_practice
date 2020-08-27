@@ -8,11 +8,12 @@
 Bird.destroy_all
 Tree.destroy_all
 
-Bird.create(name: "Blue Bird" , color: "Blue")
-Bird.create(name: "Finch" , color: "Yellow")
-Bird.create(name: "Robin" , color: "Red")
-Bird.create(name: "Hummingbird" , color: "Green")
+oak = Tree.create(species: "Oak")
+pine = Tree.create(species: "Pine")
+aspen = Tree.create(species: "Aspen")
 
-Tree.create(species: "Oak")
-Tree.create(species: "Pine")
-Tree.create(species: "Aspen")
+Bird.create(name: "Blue Bird" , color: "Blue", tree_id: oak.id)
+Bird.create(name: "Finch" , color: "Yellow", tree_id: oak.id)
+Bird.create(name: "Robin" , color: "Red", tree_id: pine.id)
+Bird.create(name: "Hummingbird" , color: "Green", tree_id: aspen.id)
+
